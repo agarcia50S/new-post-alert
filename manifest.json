@@ -1,0 +1,38 @@
+{
+    "name": "prototype-b",
+    "version": "1.0",
+    "description": "prototype-b",
+    "manifest_version": 3,
+
+    "background": {
+        "service_worker": "bg-alt-design-B.js"
+    },
+
+    "icons": {
+        "48": "images/bell-48.png",
+        "128": "images/bell-128.png"
+    },
+    
+    "action": {
+        "default_icon": {
+          "32": "images/bell-32.png",
+          "48": "images/bell-48.png",
+          "64": "images/bell-64.png",
+          "128": "images/bell-128.png"
+        }
+    },
+
+    "web_accessible_resources": [
+        {
+            "resources": ["assets-b/alert.mp3"],
+            "matches": ["<all_urls>"]
+        }
+        
+    ],
+
+    "permissions": [
+        "activeTab", 
+        "scripting",
+        "tabs"
+    ]
+}
