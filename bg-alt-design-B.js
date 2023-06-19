@@ -37,17 +37,12 @@ chrome.action.onClicked.addListener(function(tab) {
  
         chrome.runtime.onMessage.addListener((message, sender, sendResponse) => {
             console.log("Initial User: ", topUserName)
-            userName = message.userInfo[0]
-            
-            if (topUserName != userName) {
-                topUserName = userName
-                console.log("New User: ", topUserName)
-                sendResponse({newUser: true})
-            }
 
-            else {
-                sendResponse({newUser: false})
-            }
+            var userName = message.userInfo[0]
+            var isNew = isNewTopUser(topUserName, userName)
+            topUserName = isNew === true ? userName: topUserName
+
+            sendResponse({newUser: isNew})
         })
 
         state = switchState(state);
