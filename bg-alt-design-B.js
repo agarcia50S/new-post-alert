@@ -13,6 +13,13 @@ function switchState(startState) {
 }
 
 
+function isNewTopUser(priorUser, currentUser) {
+    if (priorUser != currentUser) {
+        console.log("New User: ", currentUser)
+        return true
+    }
+    return false
+}
 
 var state = "OFF"
 const pageUrl = "https://stackoverflow.com/"
