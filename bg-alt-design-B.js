@@ -27,9 +27,9 @@ chrome.action.onClicked.addListener(function(tab) {
     if (tab.url === pageUrl) {
 
         var topUserName = ""
-        console.log("Initial User: ", topUserName)
-
+ 
         chrome.runtime.onMessage.addListener((message, sender, sendResponse) => {
+            console.log("Initial User: ", topUserName)
             userName = message.userInfo[0]
             
             if (topUserName != userName) {
